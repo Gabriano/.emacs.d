@@ -20,10 +20,11 @@
 ;; Py
 (add-hook 'python-mode-hook
       (lambda ()
-        (setq indent-tabs-mode t)
+        (setq indent-tabs-mode nil)
         (setq tab-width 4)
         (setq python-indent 4)))
 
+;; Prolog
 (autoload 'run-prolog "prolog" "Start a Prolog sub-process." t)
 (autoload 'prolog-mode "prolog" "Major mode for editing Prolog programs." t)
 (autoload 'mercury-mode "prolog" "Major mode for editing Mercury programs." t)
@@ -32,6 +33,9 @@
                                 ("\\.m$" . mercury-mode))
                               auto-mode-alist))
 (require 'prolog)
+
+;; General tab width
+(setq-default tab-width 2)
 
 ;; markdown
 (autoload 'markdown-mode "markdown-mode/markdown-mode.el" "Major mode for editing Markdown files" t)
@@ -108,6 +112,9 @@
 
 ;; Scheme
 (setq scheme-program-name "gsi")
+
+;; Magit
+(require 'magit)
 
 ;; My macros
 
