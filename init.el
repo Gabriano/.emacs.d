@@ -89,7 +89,7 @@
 
 (setenv "EDITOR" "emacsclient")
 
-(add-to-list 'load-path "/opt/local/share/emacs/site-lisp/color-theme-6.6.0")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/color-theme-6.6.0")
 (require 'color-theme)
 (eval-after-load "color-theme"
                  '(progn
