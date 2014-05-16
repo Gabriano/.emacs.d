@@ -43,7 +43,7 @@
 
 ;; User overridable parameters.
 
-(defvar scheme-program-name "gsi -:d-")
+(defvar scheme-program-name "gsi -:d-,tu")
 
 (defvar gambit-repl-command-prefix "\C-c"
   "Emacs keybinding prefix for Gambit REPL's commands.")

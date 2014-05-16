@@ -3,19 +3,20 @@
 
 (add-to-list 'load-path *emacs-dir*)
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
-(let ((paths '("site-lisp"
-               "elpa")))
+(let ((paths '("site-lisp")))
   (dolist (path paths)
     (add-to-list 'load-path (concat *emacs-dir* path))))
 
+;; gambit scheme
 (autoload 'gambit-inferior-mode "gambit" "Hook Gambit mode into cmuscheme.")
 (autoload 'gambit-mode "gambit" "Hook Gambit mode into scheme.")
 (add-hook 'inferior-scheme-mode-hook (function gambit-inferior-mode))
 (add-hook 'scheme-mode-hook (function gambit-mode))
-(setq scheme-program-name "gsi -:t")
-
-;; gambit scheme
 (require 'gambit)
+
+;; Shell
+(setq explicit-shell-file-name "C:/MinGW/msys/1.0.0/bin/bash.exe")
+
 
 ;; Py
 (add-hook 'python-mode-hook
@@ -46,8 +47,8 @@
 (server-start)
 
 ;; Load ELPA
-(require 'package)
-(package-initialize)
+;; (require 'package)
+;; (package-initialize)
 
 ;; Enable mouse wheel
 (mouse-wheel-mode 1)
@@ -110,11 +111,8 @@
 ;; Show paren matches
 (show-paren-mode t)
 
-;; Scheme
-(setq scheme-program-name "gsi")
-
 ;; Magit
-(require 'magit)
+;; (require 'magit)
 
 ;; My macros
 
@@ -173,22 +171,22 @@
 ;;; interfacing with ELPA, the package archive.
 ;;; Move this code earlier if you want to reference
 ;;; packages in your .emacs.
-(when
-    (load
-     (expand-file-name "~/.emacs.d/elpa/package.el"))
-  (package-initialize))
+;; (when
+;;     (load
+;;      (expand-file-name "~/.emacs.d/elpa/package.el"))
+;;   (package-initialize))
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(display-time-mode t)
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
